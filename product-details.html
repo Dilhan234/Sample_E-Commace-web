@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <title>Book Shop</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/templatemo-lugx-gaming.css">
+  
+    <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+ <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+<style>
+      .container {
+            margin-top: 50px;
+        }
+        .img-container {
+            text-align: center;
+        }
+        .payment-form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+</style>
+<body>
+
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+ 
+  <header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- ***** Logo Start ***** -->
+                    <a href="index.html" class="logo">
+                        <img src="assets/images/book1.png" alt="" style="width: 75px;">
+                    </a>
+                  
+                    <ul class="nav">
+                      <li><a href="index.html">Home</a></li>
+                      <li><a href="shop.html">Our Shop</a></li>
+                      <li><a href="product-details.html" class="active">Product Details</a></li>
+                      <li><a href="contact.html">Contact Us</a></li>
+                      <li><a href="#">Sign In</a></li>
+                  </ul>   
+                    <a class='menu-trigger'>
+                        <span>Menu</span>
+                    </a>
+                    <!-- ***** Menu End ***** -->
+                </nav>
+            </div>
+        </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+  <div class="page-heading header-text">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h3>BookShop</h3>
+          <span class="breadcrumb"><a href="#">Home</a>  >  <a href="#">Shop</a>  >  Book'Shop</span>
+        </div>
+      </div>
+    </div>
+  </div> 
+  <section id="print" class="print">
+      <div class="container">
+        <div class="row">
+            <!-- Image Section -->
+            <div class="col-md-6 img-container">
+                <img src="assets/images/books234.jpg" style="height: 75vh;" alt="Product Image" class="img-fluid">
+            </div>
+            <!-- Payment Calculator Section -->
+            <div class="col-md-6">
+                <div class="payment-form">
+                    <h2 style="text-align: center;">Payment Form</h2>
+                    <form id="paymentForm">
+                        <div class="form-group">
+                            <label for="itemName">Item Name:</label>
+                            <input type="text" id="itemName" class="form-control" placeholder="Enter item name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="itemPrice">Price:</label>
+                            <input type="number" id="itemPrice" class="form-control" placeholder="Enter item price" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="quantity">Quantity:</label>
+                            <input type="number" id="quantity" class="form-control" placeholder="Enter quantity" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="totalPrice">Total Price:</label>
+                            <input type="text" id="totalPrice" class="form-control" readonly>
+                        </div>
+                        <button type="button" class="btn btn-primary" onclick="calculateTotal()">Add to Cart</button>
+                        <button type="button" class="btn btn-secondary" onclick="printDocument()">Print</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function calculateTotal() {
+            const price = parseFloat(document.getElementById('itemPrice').value) || 0;
+            const quantity = parseFloat(document.getElementById('quantity').value) || 0;
+            const total = price * quantity;
+            document.getElementById('totalPrice').value = total.toFixed(2);
+        }
+
+        function printDocument() {
+            window.print();
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </section>
+        </div>
+        <div class="col-lg-12">
+          <div class="sep"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="more-info">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="tabs-content">
+            <div class="row">
+              <div class="nav-wrapper ">
+                <ul class="nav nav-tabs" role="tablist">
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="description-tab" data-bs-toggle="tab" data-bs-target="#description" type="button" role="tab" aria-controls="description" aria-selected="true">Description</button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="reviews-tab" data-bs-toggle="tab" data-bs-target="#reviews" type="button" role="tab" aria-controls="reviews" aria-selected="false">Reviews (3)</button>
+                  </li>
+                </ul>
+              </div>              
+              <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
+                  <p>ශ්‍රී ලංකාවේ අධ්‍යාපන පද්ධතිය විශාල හා සංකීර්ණ ය. එය මුලින්ම පාසල් අධ්‍යාපනයෙන් ආරම්භ වේ, එහිදී අධ්‍යාපනය කාණ්ඩවලට වෙන් කර ඇත: පූර්ව පාසල්, ප්‍රාථමික පාසල්, මැද පෙළ පාසල් හා උසස් පාසල්. ශ්‍රී ලංකාවේ අධ්‍යාපන ක‍්‍රමය අතිශයින්ම අන්තර්ජාතික නිලධාරීන්, විශේෂිත විෂය මාලා හා විභාග මගින් අලංකාර කරන ලද පද්ධතියක් වේ. පාසල් අධ්‍යාපනයෙන් පසුව, සිසුන්ට ජාතික සාමාන්‍ය පෙළ (G.C.E O/L) විභාගය හා ජාතික උසස් පෙළ (G.C.E A/L) විභාගය සඳහා සූදානම් වීමට අවශ්‍ය වේ. විශේෂිත විෂයයන් තෝරා ගනිමින්, ඔවුන් අනාගත වෘත්තීය මාර්ගයන් සොයා ගන්නා අතර, විශ්ව විද්‍යාල සහිත උසස් අධ්‍යාපනයට පිවිසෙන්නෙහිය. අධ්‍යාපනය, ශ්‍රී ලංකාවේ සාමාජික සම්බන්ධතා වර්ධනය කිරීම, ආර්ථික වර්ධනය හා සමාජ සංවර්ධනය සඳහා වැදගත් වේ.</p>
+                  <br>
+                  <p>ශ්‍රී ලංකාවේ අධ්‍යාපන පද්ධතිය විශාල හා සංකීර්ණ ය. එය මුලින්ම පාසල් අධ්‍යාපනයෙන් ආරම්භ වේ, එහිදී අධ්‍යාපනය කාණ්ඩවලට වෙන් කර ඇත: පූර්ව පාසල්, ප්‍රාථමික පාසල්, මැද පෙළ පාසල් හා උසස් පාසල්. ශ්‍රී ලංකාවේ අධ්‍යාපන ක‍්‍රමය අතිශයින්ම අන්තර්ජාතික නිලධාරීන්, විශේෂිත විෂය මාලා හා විභාග මගින් අලංකාර කරන ලද පද්ධතියක් වේ. පාසල් අධ්‍යාපනයෙන් පසුව, සිසුන්ට ජාතික සාමාන්‍ය පෙළ (G.C.E O/L) විභාගය හා ජාතික උසස් පෙළ (G.C.E A/L) විභාගය සඳහා සූදානම් වීමට අවශ්‍ය වේ. විශේෂිත විෂයයන් තෝරා ගනිමින්, ඔවුන් අනාගත වෘත්තීය මාර්ගයන් සොයා ගන්නා අතර, විශ්ව විද්‍යාල සහිත උසස් අධ්‍යාපනයට පිවිසෙන්නෙහිය. අධ්‍යාපනය, ශ්‍රී ලංකාවේ සාමාජික සම්බන්ධතා වර්ධනය කිරීම, ආර්ථික වර්ධනය හා සමාජ සංවර්ධනය සඳහා වැදගත් වේ.</p>
+                </div>
+                <div class="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="reviews-tab">
+                  <p>ශ්‍රී ලංකාවේ අධ්‍යාපන පද්ධතිය විශාල හා සංකීර්ණ ය. එය මුලින්ම පාසල් අධ්‍යාපනයෙන් ආරම්භ වේ, එහිදී අධ්‍යාපනය කාණ්ඩවලට වෙන් කර ඇත: පූර්ව පාසල්, ප්‍රාථමික පාසල්, මැද පෙළ පාසල් හා උසස් පාසල්. ශ්‍රී ලංකාවේ අධ්‍යාපන ක‍්‍රමය අතිශයින්ම අන්තර්ජාතික නිලධාරීන්, විශේෂිත විෂය මාලා හා විභාග මගින් අලංකාර කරන ලද පද්ධතියක් වේ. පාසල් අධ්‍යාපනයෙන් පසුව, සිසුන්ට ජාතික සාමාන්‍ය පෙළ (G.C.E O/L) විභාගය හා ජාතික උසස් පෙළ (G.C.E A/L) විභාගය සඳහා සූදානම් වීමට අවශ්‍ය වේ. විශේෂිත විෂයයන් තෝරා ගනිමින්, ඔවුන් අනාගත වෘත්තීය මාර්ගයන් සොයා ගන්නා අතර, විශ්ව විද්‍යාල සහිත උසස් අධ්‍යාපනයට පිවිසෙන්නෙහිය. අධ්‍යාපනය, ශ්‍රී ලංකාවේ සාමාජික සම්බන්ධතා වර්ධනය කිරීම, ආර්ථික වර්ධනය හා සමාජ සංවර්ධනය සඳහා වැදගත් වේ.</p>
+                </div>                 
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section categories related-games">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="section-heading">
+            <h6>වෙනත් පොත්</h6>
+            <h2>වෙනත් පොත්</h2>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="main-button">
+            <a href="shop.html">View All</a>
+          </div>
+        </div>
+        <div class="col-lg col-sm-6 col-xs-12">
+          <div class="item">
+            <h4>වෙනත් පොත්</h4>
+            <div class="thumb">
+              <a href="product-details.html"><img src="assets/images/categories-01.jpg" alt=""></a>
+            </div>                                  
+          </div>
+        </div>
+        <div class="col-lg col-sm-6 col-xs-12">
+          <div class="item">
+            <h4>වෙනත් පොත්</h4>
+            <div class="thumb">
+              <a href="product-details.html"><img src="assets/images/categories-05.jpg" alt=""></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg col-sm-6 col-xs-12">
+          <div class="item">
+            <h4>වෙනත් පොත්</h4>
+            <div class="thumb">
+              <a href="product-details.html"><img src="assets/images/categories-03.jpg" alt=""></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg col-sm-6 col-xs-12">
+          <div class="item">
+            <h4>වෙනත් පොත්</h4>
+            <div class="thumb">
+              <a href="product-details.html"><img src="assets/images/categories-04.jpg" alt=""></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg col-sm-6 col-xs-12">
+          <div class="item">
+            <h4>වෙනත් පොත්</h4>
+            <div class="thumb">
+              <a href="product-details.html"><img src="assets/images/categories-05.jpg" alt=""></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/js/isotope.min.js"></script>
+  <script src="assets/js/owl-carousel.js"></script>
+  <script src="assets/js/counter.js"></script>
+  <script src="assets/js/custom.js"></script>
+
+  </body>
+</html>
